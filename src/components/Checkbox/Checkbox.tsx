@@ -1,4 +1,16 @@
+import React from 'react';
 import './Checkbox.css';
+
+export type SelectedCheckbox = { id: number, label: string, price: number }
+export interface CheckboxProps {
+    label: string,
+    text: string,
+    price: number,
+    onChange: () => void,
+    id: number,
+    selectedCheckbox: SelectedCheckbox,
+    isChecked: boolean
+}
 const Checkbox = ({label,text,price,onChange,id,selectedCheckbox,isChecked}) => {
 
     const chosenChekbox = selectedCheckbox && selectedCheckbox.id === id;

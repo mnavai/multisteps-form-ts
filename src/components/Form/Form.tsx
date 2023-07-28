@@ -1,11 +1,12 @@
 import Input from "../Input/Input";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "../Button/Button.tsx";
+import Button from "../Button/Button";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "../Button/Button.css";
 import "../Form/Form.css";
+import React from "react";
 
 const getForm = process.env.REACT_APP_GET_FORM_KEY;
 const Form = () => {
