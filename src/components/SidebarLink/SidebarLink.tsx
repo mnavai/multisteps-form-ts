@@ -1,4 +1,11 @@
+import React from 'react';
 import './SidebarLink.css';
+
+export interface SidebarLinkProps {
+    step: number,
+    text: string,
+    currentStep: number
+}
 const SidebarLink = ({step, text, currentStep}) => {
     const isActive = step === currentStep;
     return(
@@ -8,7 +15,7 @@ const SidebarLink = ({step, text, currentStep}) => {
                         {step}
                     </span>   
                 </div>
-                <div class="list-item-info">
+                <div className="list-item-info">
                     <h5 className="nav-heading">STEP {step}</h5>
                     <p className="nav-p">{text}</p>
                 </div>

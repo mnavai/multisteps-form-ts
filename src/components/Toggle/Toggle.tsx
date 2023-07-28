@@ -1,14 +1,23 @@
 import { useState, useContext, useEffect } from "react"
 import { CardContext } from "../../context/CardContext";
 import "./Toggle.css";
+import React from "react";
 
-const Toggle = ({monthly,yearly}) => {
-    const [toggleState,setToggleState] = useState(() => JSON.parse(localStorage.getItem("toggleState")) || false); //the getter should go into useState to avoid reinitialization on re-rendering page
+export type ToggleState = boolean 
+export interface ToggleProps {
+    monthly: string,
+    yearly: string
+}
+const Toggle = ({monthly,yearly}: ToggleProps) => {
+    const [toggleState,setToggleState] = useState<ToggleState>(() => {
+        const storedData = localStorage ? localStorage.getItem("toggleState") : null;
+        return storedData ? JSON.parse(storedData) : false;
+    }); //the getter should go into useState to avoid reinitialization on re-rendering page
     const {setToggleSelection} = useContext(CardContext);
   
       const handleToggle = () => {
         setToggleState(!toggleState);
-        let toggleStatus = monthly;
+        let toggleStatus:string = monthly;
         if (toggleState === false){
             toggleStatus = yearly;
         }
@@ -19,7 +28,7 @@ const Toggle = ({monthly,yearly}) => {
     }
     
     useEffect(() => {
-        localStorage.setItem("toggleState", JSON.stringify(toggleState));
+        localStorage && localStorage.setItem("toggleState", JSON.stringify(toggleState));
     }, [toggleState]);
 
     return(
