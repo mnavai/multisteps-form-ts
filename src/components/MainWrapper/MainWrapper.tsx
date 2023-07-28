@@ -1,5 +1,9 @@
+import React from 'react';
+import { ReactNode } from 'react';
 import './MainWrapper.css';
-const MainWrapper = ({children}) => {
+
+export interface MainwrapperProps { children: ReactNode } 
+const MainWrapper = ({children}: MainwrapperProps) => {
     return(
         <main className="main-section" data-testid="main-section">
             {children}

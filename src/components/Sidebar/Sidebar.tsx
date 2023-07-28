@@ -1,7 +1,10 @@
 
+import React from "react";
 import SidebarLink from "../SidebarLink/SidebarLink";
 import "./Sidebar.css";
-const Sidebar = ({ currentStep }) => {
+
+export interface CurrentStep { currentStep : number }
+const Sidebar = ({ currentStep }: CurrentStep) => {
     return(
         <header className="nav-header" data-testid="sidebar-test">
             <nav className="side-nav">
