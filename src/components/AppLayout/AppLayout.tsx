@@ -1,6 +1,8 @@
+import React, { ReactNode } from "react";
 import "./AppLayout.css"
 
-const AppLayout = ({children}) => {
+export interface AppLayoutProps { children: ReactNode }
+const AppLayout = ({children}: AppLayoutProps) => {
     return(
         <div className="app-layout" data-testid="app-layout">
             {children}
