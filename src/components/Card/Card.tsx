@@ -1,8 +1,19 @@
+import React from 'react';
 import { useContext } from 'react';
-import './Card.css';
 import { CardContext } from '../../context/CardContext';
+import './Card.css';
 
-const Card = ({src, altText, label, price, onClick, selectedCard, id}) => {
+export type SelectedCard = { id: number, label: string, price: number }
+export interface CardProps {
+    src: string,
+    altText: string,
+    label: string,
+    price: number,
+    onClick: () => void,
+    selectedCard: SelectedCard,
+    id: number
+}
+const Card = ({src, altText, label, price, onClick, selectedCard, id}: CardProps) => {
     
     const cardSelected = selectedCard && selectedCard.id === id;
     const {toggleSelection} = useContext(CardContext);
