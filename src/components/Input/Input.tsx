@@ -1,6 +1,17 @@
+import React from "react";
 import "./Input.css";
 
-const Input = ({ id, labelName, type, placeholder, onChange, value, error }) => {
+export type InputType =  "text" | "tel" | "email"
+export interface InputProps {
+  id: string,
+  labelName: string,
+  type: InputType,
+  placeholder: string,
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  value: string,
+  error: string
+}
+const Input = ({ id, labelName, type, placeholder, onChange, value, error }: InputProps) => {
   const hasError = value === "" && error !== "";
 
   return (
