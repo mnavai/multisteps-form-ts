@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Button from "../components/Button/Button";
+import Button from "../components/Button/Button.tsx";
 import Sidebar from "../components/Sidebar/Sidebar";
 import HeadingGroup from "../components/HeadingGroup/HeadingGroup";
 import AppLayout from "../components/AppLayout/AppLayout";
