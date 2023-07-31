@@ -9,15 +9,20 @@ import { CardContext } from "../context/CardContext.js";
 import { CheckBoxContext } from "../context/CheckBoxContext.js";
 import React from "react";
 
+export interface SelectedServiceProps {
+    service: string,
+    price: number
+}
 const Summary = () => {
+  
     const { selectCards, toggleSelection, cardPrice } = useContext(CardContext);
     const { selectedServices } = useContext(CheckBoxContext);
 
     const isYearlyPlan = toggleSelection === "Yearly";
     const cardPriceYearly = cardPrice * 12 
-    const servicesPriceYearly = selectedServices.reduce((total, service) => {
-        console.log(total + service.price)
-        return total + service.price
+    const servicesPriceYearly = selectedServices.reduce((total: number, service: SelectedServiceProps) => {
+        console.log(total + service?.price)
+        return total + service?.price
     },0)
 
     let totalPrice;
@@ -26,8 +31,8 @@ const Summary = () => {
         console.log(totalPrice)
     }
     else {
-        const selectedServicesTotal = selectedServices.reduce((total, service) => {
-            return total + service.price
+        const selectedServicesTotal = selectedServices.reduce((total: number, service: SelectedServiceProps) => {
+            return total + service?.price
         },0);
         totalPrice = cardPrice + selectedServicesTotal;
     }
@@ -56,11 +61,11 @@ const Summary = () => {
                             <div className="selected-addons">
                                 <div className="addon-text-group">
                                     {selectedServices.length > 0 ? (
-                                        selectedServices.map((service, index) => (
+                                        selectedServices.map((service: SelectedServiceProps, index: number) => (
                                             <div key={index} className="addon">
-                                                <p className="addons-p">{service.service}</p>
+                                                <p className="addons-p">{service?.service}</p>
                                                 <p className="addons-price">
-                                                    +${service.price}{isYearlyPlan ? "/yr" : "/mo"}  
+                                                    +${service?.price}{isYearlyPlan ? "/yr" : "/mo"}  
                                                 </p>
                                             </div>
                                         ))
