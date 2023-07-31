@@ -6,7 +6,7 @@ export const CardContext = createContext({
     cardPrice: 0,
     setCardPrice: () => {},
     toggleSelection: "Monthly",
-    setToggleSelection: (toggleSelection) => { return toggleSelection },
+    setToggleSelection: (a) => {},
 })
 
 export const CardProvider = ({children}) => {

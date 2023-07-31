@@ -2,7 +2,7 @@ import { useState, createContext } from "react";
 
 export const CheckBoxContext = createContext({
     selectedServices: [], 
-    addSelectedService: () => {}
+    addSelectedService: (a,b,c) => {}
 });
 
 export const CheckBoxProvider = ({children}) => {

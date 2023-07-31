@@ -1,20 +1,21 @@
 import { Link } from "react-router-dom";
 import Button from "../components/Button/Button.js";
-import Sidebar from "../components/Sidebar/Sidebar.jsx";
-import HeadingGroup from "../components/HeadingGroup/HeadingGroup.jsx";
-import Checkbox from "../components/Checkbox/Checkbox.jsx";
-import AppLayout from "../components/AppLayout/AppLayout.jsx";
-import MainWrapper from "../components/MainWrapper/MainWrapper.jsx";
+import Sidebar from "../components/Sidebar/Sidebar.js";
+import HeadingGroup from "../components/HeadingGroup/HeadingGroup.js";
+import Checkbox from "../components/Checkbox/Checkbox.js";
+import AppLayout from "../components/AppLayout/AppLayout.js";
+import MainWrapper from "../components/MainWrapper/MainWrapper.js";
 import { useState, useContext, useEffect } from "react";
 import { CheckBoxContext } from "../context/CheckBoxContext.js";
 import { CardContext } from "../context/CardContext.js";
+import React from "react";
 
 
 const AddOns = () => {
     const {addSelectedService}  = useContext(CheckBoxContext);
     const { toggleSelection } = useContext(CardContext);
-    const [selectedCheckbox,setSelectedCheckbox] = useState(JSON.parse(localStorage.getItem("selectedCheckbox")) || {});
-    
+    const [selectedCheckbox, setSelectedCheckbox] = useState(JSON.parse(localStorage.getItem("selectedCheckbox") || "{}"));
+
     const handleOnChange = (checkboxData) => {
         const { label, price } = checkboxData;
         const updatedCheckboxState = !selectedCheckbox[label];
@@ -34,7 +35,7 @@ const AddOns = () => {
 
     return (
         <AppLayout>
-          <Sidebar currentStep="3" />
+          <Sidebar currentStep={3} />
           <MainWrapper>
             <HeadingGroup heading="Pick add-ons" ptag="Add-ons help enhance your gaming experience." />
             <div id="form" className="form-class">
