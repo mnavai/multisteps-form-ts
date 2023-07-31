@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-import Button from "../components/Button/Button.tsx";
-import Sidebar from "../components/Sidebar/Sidebar";
-import HeadingGroup from "../components/HeadingGroup/HeadingGroup";
-import AppLayout from "../components/AppLayout/AppLayout";
-import MainWrapper from "../components/MainWrapper/MainWrapper";
+import Button from "../components/Button/Button.js";
+import Sidebar from "../components/Sidebar/Sidebar.js";
+import HeadingGroup from "../components/HeadingGroup/HeadingGroup.js";
+import AppLayout from "../components/AppLayout/AppLayout.js";
+import MainWrapper from "../components/MainWrapper/MainWrapper.js";
 import { useContext } from "react";
-import { CardContext } from "../context/CardContext";
-import { CheckBoxContext } from "../context/CheckBoxContext";
+import { CardContext } from "../context/CardContext.js";
+import { CheckBoxContext } from "../context/CheckBoxContext.js";
+import React from "react";
 
 const Summary = () => {
     const { selectCards, toggleSelection, cardPrice } = useContext(CardContext);
@@ -32,7 +33,7 @@ const Summary = () => {
     }
     return (
         <AppLayout>
-            <Sidebar currentStep="4" />
+            <Sidebar currentStep={4} />
             <MainWrapper>
                 <HeadingGroup 
                         heading="Finishing up" 
@@ -41,8 +42,8 @@ const Summary = () => {
                     <div className="bill-container">
                         <div className="plan-details-container">
                             <div className="selected-plan">
-                                <div class="plan-text-group">
-                                    <div class="plan"><h4>{selectCards}</h4></div>
+                                <div className="plan-text-group">
+                                    <div className="plan"><h4>{selectCards}</h4></div>
                                     <Link to="/select-plan">Change</Link>
                                 </div>
                                 <div className="plan-price">

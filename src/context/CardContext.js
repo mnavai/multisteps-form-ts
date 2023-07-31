@@ -2,9 +2,9 @@ import { createContext, useState } from "react";
 
 export const CardContext = createContext({
     selectCards: "",
-    setSelectedCards: () => {},
+    setSelectedCards: (a) => {},
     cardPrice: 0,
-    setCardPrice: () => {},
+    setCardPrice: (a) => {},
     toggleSelection: "Monthly",
     setToggleSelection: (a) => {},
 })

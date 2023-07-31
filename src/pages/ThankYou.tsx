@@ -23,7 +23,7 @@ const Summary = () => {
 
     return (
         <AppLayout>
-            <Sidebar currentStep="5" />
+            <Sidebar currentStep={5} />
             <MainWrapper>
                 <div id="form" className="form-class">
                     <div className="finalmessage-container">

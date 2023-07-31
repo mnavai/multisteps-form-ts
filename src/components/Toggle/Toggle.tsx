@@ -38,7 +38,7 @@ const Toggle = ({monthly,yearly}: ToggleProps) => {
                 <input type="checkbox" onChange={handleToggle} checked={toggleState} data-testid="toggle"/>
                 <span className="slider round"></span>
             </label>
-            <p className="grey-bar-year">{yearly}</p>
+            <p className="grey-bar-year">${yearly}{yearly ? " /yr" : " /mo"}</p>
         </div>
     );
 }
