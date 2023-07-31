@@ -26,7 +26,7 @@ export const CardProvider = ({children}: CardContextProps) => {
     const value:ValueType = {selectCards, setSelectedCards, cardPrice, setCardPrice, toggleSelection, setToggleSelection};
 
     return (
-        //error
+        //error is
         <CardContext.Provider value={value}>{children}</CardContext.Provider>
     )
  }
