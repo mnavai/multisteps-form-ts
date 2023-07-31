@@ -6,7 +6,7 @@ export interface SidebarLinkProps {
     text: string,
     currentStep: number
 }
-const SidebarLink = ({step, text, currentStep}) => {
+const SidebarLink = ({step, text, currentStep}: SidebarLinkProps) => {
     const isActive = step === currentStep;
     return(
             <li className="list-items" data-testid="sidebarlink">
