@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import YourInfo from './pages/YourInfo';
-import SelectPlan from './pages/SelectPlan';
-import AddOns from './pages/AddOns';
-import Summary from './pages/Summary';
-import ThankYou from './pages/ThankYou';
-import NotFound from './pages/NotFound';
+import YourInfo from './pages/YourInfo.tsx';
+import SelectPlan from './pages/SelectPlan.tsx';
+import AddOns from './pages/AddOns.tsx';
+import Summary from './pages/Summary.tsx';
+import ThankYou from './pages/ThankYou.tsx';
+import NotFound from './pages/NotFound.tsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 

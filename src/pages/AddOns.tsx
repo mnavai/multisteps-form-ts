@@ -1,15 +1,14 @@
 import { Link } from "react-router-dom";
-import Button from "../components/Button/Button.js";
-import Sidebar from "../components/Sidebar/Sidebar.js";
-import HeadingGroup from "../components/HeadingGroup/HeadingGroup.js";
-import Checkbox from "../components/Checkbox/Checkbox.js";
-import AppLayout from "../components/AppLayout/AppLayout.js";
-import MainWrapper from "../components/MainWrapper/MainWrapper.js";
+import {Button} from "../components/Button/Button";
+import Sidebar from "../components/Sidebar/Sidebar";
+import HeadingGroup from "../components/HeadingGroup/HeadingGroup";
+import Checkbox from "../components/Checkbox/Checkbox";
+import AppLayout from "../components/AppLayout/AppLayout";
+import MainWrapper from "../components/MainWrapper/MainWrapper";
 import { useState, useContext, useEffect } from "react";
-import { CheckBoxContext } from "../context/CheckBoxContext.js";
-import { CardContext } from "../context/CardContext.js";
-import React from "react";
-
+import { CheckBoxContext } from "../context/CheckBoxContext";
+import { CardContext } from "../context/CardContext";
+import React from 'react';
 
 const AddOns = () => {
     const {addSelectedService}  = useContext(CheckBoxContext);

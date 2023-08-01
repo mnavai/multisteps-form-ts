@@ -1,7 +1,7 @@
 import Sidebar from "../components/Sidebar/Sidebar";
 import AppLayout from "../components/AppLayout/AppLayout";
 import MainWrapper from "../components/MainWrapper/MainWrapper";
-import React from 'react'
+import React from 'react';
 import Confetti from 'react-confetti'
 import { useWindowSize } from 'react-use';
 import { useEffect, useState } from 'react';

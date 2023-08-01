@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
-import Button from "../components/Button/Button.js";
-import Sidebar from "../components/Sidebar/Sidebar.js";
-import HeadingGroup from "../components/HeadingGroup/HeadingGroup.js";
-import AppLayout from "../components/AppLayout/AppLayout.js";
-import MainWrapper from "../components/MainWrapper/MainWrapper.js";
+import {Button} from "../components/Button/Button";
+import Sidebar from "../components/Sidebar/Sidebar";
+import HeadingGroup from "../components/HeadingGroup/HeadingGroup";
+import AppLayout from "../components/AppLayout/AppLayout";
+import MainWrapper from "../components/MainWrapper/MainWrapper";
 import { useContext } from "react";
-import { CardContext } from "../context/CardContext.js";
-import { CheckBoxContext } from "../context/CheckBoxContext.js";
-import React from "react";
+import { CardContext } from "../context/CardContext";
+import { CheckBoxContext } from "../context/CheckBoxContext";
+import React from 'react';
 
 export interface SelectedServiceProps {
     service: string,

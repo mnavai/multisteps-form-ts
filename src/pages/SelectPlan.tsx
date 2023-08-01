@@ -1,14 +1,14 @@
-import Button from "../components/Button/Button.js";
-import HeadingGroup from "../components/HeadingGroup/HeadingGroup.js";
-import Slidebar from "../components/Sidebar/Sidebar.js";
-import Card from "../components/Card/Card.js";
+import {Button} from "../components/Button/Button";
+import HeadingGroup from "../components/HeadingGroup/HeadingGroup";
+import Slidebar from "../components/Sidebar/Sidebar";
+import Card from "../components/Card/Card";
 import { Link } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
-import AppLayout from "../components/AppLayout/AppLayout.js";
-import MainWrapper from "../components/MainWrapper/MainWrapper.js";
-import Toggle from "../components/Toggle/Toggle.js";
-import { CardContext } from "../context/CardContext.js";
-import React from "react";
+import AppLayout from "../components/AppLayout/AppLayout";
+import MainWrapper from "../components/MainWrapper/MainWrapper";
+import Toggle from "../components/Toggle/Toggle";
+import { CardContext } from "../context/CardContext";
+import React from 'react';
 
 const SelectPlan = () => {
     const { setSelectedCards, setCardPrice, toggleSelection } = useContext(CardContext);
