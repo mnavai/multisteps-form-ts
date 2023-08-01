@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import AppLayout from '../AppLayout';
+import React from 'react';
 
 describe("component correctly", () => {
     it("renders component correctly", () => {

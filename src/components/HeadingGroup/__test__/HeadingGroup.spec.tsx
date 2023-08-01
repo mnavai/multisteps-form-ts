@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import HeadingGroup from '../HeadingGroup';
+import React from 'react';
 
 describe("HeadingGroup component", () => {
     it("should render component correctly", () => {
-        render(<HeadingGroup></HeadingGroup>)
+        render(<HeadingGroup heading={''} ptag={''}></HeadingGroup>)
         const hgroup = screen.getByTestId("hgroup")
         expect(hgroup).toBeInTheDocument()
     })
@@ -18,7 +19,7 @@ describe("HeadingGroup component", () => {
     })
     it("should have the correct class name", () => {
 
-        render(<HeadingGroup />);
+        render(<HeadingGroup heading={''} ptag={''} />);
         const hgroupElement = screen.getByTestId("hgroup");
         const headingElement = screen.getByTestId('heading');
         const ptagElement = screen.getByTestId('ptag');

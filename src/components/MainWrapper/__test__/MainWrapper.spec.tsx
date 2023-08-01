@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import MainWrapper from '../MainWrapper';
+import React from 'react';
 
 describe("MainWrapper component", () => {
     it("should render compnent correctly", () => {
@@ -11,7 +12,7 @@ describe("MainWrapper component", () => {
         expect(childrenProp).toBeInTheDocument()
     })
     it("should have the correct class name", () => {
-        render(<MainWrapper></MainWrapper>)
+        render(<MainWrapper children={undefined}></MainWrapper>)
         const className = screen.getByTestId("main-section")
         expect(className).toHaveClass("main-section")
     })

@@ -2,10 +2,13 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom'; 
 import Input from '../Input';
 import Form from '../../Form/Form';
+import React from 'react';
 
 describe("Input component", () => {
   it("should render Input correctly", () => {
-    render(<Input />);
+    render(<Input id={''} labelName={''} type={'text'} placeholder={''} onChange={function (e: React.ChangeEvent<HTMLInputElement>): void {
+      throw new Error('Function not implemented.');
+    } } value={''} error={''} />);
     const input = screen.getByTestId("input");
     expect(input).toBeInTheDocument();
   });
@@ -48,7 +51,7 @@ describe("Input component", () => {
         error=""
       />
     );
-    const input = screen.getByTestId("input");
+    const input = screen.getByTestId("input") as HTMLInputElement;
     fireEvent.change(input, { target: { value: "Mary Smith" } });
     const newValue = input.value;
     expect(newValue).toBe("Mary Smith");

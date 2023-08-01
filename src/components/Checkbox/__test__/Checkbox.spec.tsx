@@ -1,11 +1,12 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import Checkbox from '../Checkbox.tsx';
+import Checkbox from '../Checkbox.js';
+import React from 'react';
 
 describe ("Checkbox component",() => {
     
     it("should render Checkbox correctly", () => {
-        render(<Checkbox></Checkbox>)
-        const checkbox = screen.getByTestId("checkbox")
+        render(<Checkbox label={undefined} text={undefined} price={undefined} onChange={undefined} id={undefined} selectedCheckbox={undefined} isChecked={undefined}></Checkbox>)
+        const checkbox = screen.getByTestId('checkbox') as HTMLInputElement; // Use type assertion here
         expect(checkbox).toBeInTheDocument()
     })
     it("should render props correctly", () => {
@@ -20,12 +21,12 @@ describe ("Checkbox component",() => {
         expect(text.innerHTML).toEqual("Access to multiplayer games")
         const price = screen.getByTestId("price")
         expect(price.innerHTML).toEqual("1")
-        const checkbox = screen.getByTestId('checkbox')
+        const checkbox = screen.getByTestId('checkbox') as HTMLInputElement; // Use type assertion here
         fireEvent.click(checkbox)
-        expect(checkbox.checked).toBe(true)
+        expect(checkbox?.checked).toBe(true)
         rerender(<Checkbox label={selectedCheckbox.label} text="Access to multiplayer games" price={selectedCheckbox.price} onChange={() => handleOnChange(selectedCheckbox)} id={selectedCheckbox.id} selectedCheckbox={selectedCheckbox} isChecked={selectedCheckbox["Online Service"]} ></Checkbox>)
         fireEvent.click(checkbox)
-        expect(checkbox.checked).toBe(false)
+        expect(checkbox?.checked).toBe(false)
         const id = selectedCheckbox.id.toString()
         expect(id).toEqual("1")
     })

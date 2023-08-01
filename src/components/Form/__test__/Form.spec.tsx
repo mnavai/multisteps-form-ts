@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom'; // Import the Router
 import Form from '../Form';
+import React from 'react';
 
 describe("Form component", () => {
   it("should render Form correctly", () => {

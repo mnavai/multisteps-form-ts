@@ -9,7 +9,7 @@ export interface CheckboxProps {
     onChange: () => void,
     id: number,
     selectedCheckbox: SelectedCheckbox,
-    isChecked: boolean
+    isChecked?: boolean 
 }
 const Checkbox = ({label,text,price,onChange,id,selectedCheckbox,isChecked}) => {
 
