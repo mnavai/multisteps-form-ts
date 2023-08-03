@@ -1,5 +1,5 @@
 import Input from "../Input/Input";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {Button} from "../Button/Button";
 import { toast } from 'react-toastify';
@@ -16,22 +16,22 @@ const Form = () => {
   const [submitted,setSubmitted] = useState(false);
   const navigate = useNavigate();
 
-  const handleNameChange = (e) => {
-    setName(e.target.value);
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target?.value);
   };
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target?.value);
   };
 
-  const handlePhoneChange = (e) => {
-    setPhone(e.target.value);
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPhone(e.target?.value);
   };
 
   const validateForm = () => {
       return name === "" || email === "" || phone === "";
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSubmitted(true);
   

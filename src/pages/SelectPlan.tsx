@@ -10,13 +10,18 @@ import Toggle from "../components/Toggle/Toggle";
 import { CardContext } from "../context/CardContext";
 import React from 'react';
 
+export interface CardData {
+        id: number, 
+        label: string,
+        price: number
+}
 const SelectPlan = () => {
     const { setSelectedCards, setCardPrice, toggleSelection } = useContext(CardContext);
     const storedSelectedCard = localStorage.getItem("selectedCard");
     const initialSelectedCard = storedSelectedCard ? JSON.parse(storedSelectedCard) : null;
     const [selectedCard, setSelectedCard] = useState(initialSelectedCard);
 
-    const handleClickCard = (cardData) => {
+    const handleClickCard = (cardData: CardData ) => {
         setSelectedCard(cardData);
         setSelectedCards(cardData.label);
         setCardPrice(cardData.price);

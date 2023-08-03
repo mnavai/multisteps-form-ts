@@ -12,6 +12,21 @@ const Summary = () => {
     const [showConfetti, setShowConfetti] = useState(false);
     const navigate = useNavigate();
 
+    const confettiOptions = {
+        width:width,
+        height:height,
+        recycle:false, // Disable recycling of confetti particles
+        run:showConfetti, // Start the confetti animation
+        numberOfPieces:600, // Number of confetti pieces
+        gravity:0.3, // Gravity factor (affects falling speed)
+        wind:0.1, // Wind factor (affects horizontal movement)
+        initialVelocityX:10, // Initial horizontal velocity
+        initialVelocityY:15, // Initial vertical velocity
+        fadeOut:true, // Enable fading out of confetti
+        opacity:1, // Initial opacity of confetti pieces
+        recycleDelay:3000 // Time delay before recycling confetti pieces
+    }
+    const confettiProps = confettiOptions as any;
     useEffect(() => {
     setShowConfetti(true);
     setTimeout(() => {
@@ -40,20 +55,7 @@ const Summary = () => {
                     </div>
                     {showConfetti && (
                         <div className="confetti-container">
-                            <Confetti
-                                width={width}
-                                height={height}
-                                recycle={false} // Disable recycling of confetti particles
-                                run={showConfetti} // Start the confetti animation
-                                numberOfPieces={600} // Number of confetti pieces
-                                gravity={0.3} // Gravity factor (affects falling speed)
-                                wind={0.1} // Wind factor (affects horizontal movement)
-                                initialVelocityX={10} // Initial horizontal velocity
-                                initialVelocityY={15} // Initial vertical velocity
-                                fadeOut={true} // Enable fading out of confetti
-                                opacity={1} // Initial opacity of confetti pieces
-                                recycleDelay={3000} // Time delay before recycling confetti pieces
-                                />
+                           <Confetti {...confettiProps} />
                         </div>
                     )}
                 </div>    
