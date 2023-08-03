@@ -18,13 +18,11 @@ describe("HeadingGroup component", () => {
         expect(pTagText.innerHTML).toEqual("Please provide your name, email address, and phone number.")
     })
     it("should have the correct class name", () => {
-
         render(<HeadingGroup heading={''} ptag={''} />);
         const hgroupElement = screen.getByTestId("hgroup");
         const headingElement = screen.getByTestId('heading');
         const ptagElement = screen.getByTestId('ptag');
-
-        expect(hgroupElement).toHaveClass("form-hgroup")
+        expect(hgroupElement).toHaveClass("form-hgroup");
         expect(headingElement).toHaveClass('hgroup-heading');
         expect(ptagElement).toHaveClass('hgroup-p');
     })
