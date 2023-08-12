@@ -6,7 +6,7 @@ import React from 'react';
 
 describe("Input component", () => {
   it("should render Input correctly", () => {
-    render(<Input id={''} labelName={''} type={'text'} placeholder={''} onChange={function (e: React.ChangeEvent<HTMLInputElement>): void {
+    render(<Input id={''} labelName={''} type={'text'} placeholder={''} onChange={function (): void {
       throw new Error('Function not implemented.');
     } } value={''} error={''} />);
     const input = screen.getByTestId("input");
